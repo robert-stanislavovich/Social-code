@@ -43,29 +43,13 @@ class App extends React.Component {
 
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                        <Redirect from={"/"} to={"/profile"} />
-                        <Route path='/dialogs'
-                               render={() => <DialogsContainer/>}/>
-                        <Route path='/chat'
-                               render={() => <ChatContainer/>}/>
+                        <Redirect from={"/"} to={"/profile"} />                                         
                         <Route path='/profile/:userId?'
-                               render={() => <ProfileContainer/>}/>
-                        <Route path='/users'
-                               render={() => <UsersContainer/>}/>
+                               render={() => <ProfileContainer/>}/>                        
                         <Route path='/myusers'
-                               render={() => <MyUsersContainer/>}/>
-                        <Route exact path='/films'
-                               render={() => <Films/>}/>
-                        <Route path='/films/1'
-                               render={() => <Fiveonblood/>}/>
-                        <Route path='/films/2'
-                               render={() => <Diablo/>}/>
-                        <Route path='/films/3'
-                               render={() => <Prostopomilovat/>}/>
+                               render={() => <MyUsersContainer/>}/>                        
                         <Route path='/login'
-                               render={() => <Login/>}/>
-                        <Route path='/registration'
-                               render={() => <Registration/>}/>
+                               render={() => <Login/>}/>                       
                         <Route path='/uploadAvatar'
                                render={() => <UploadAvatar/>}/>
                         <Route path='/food'
