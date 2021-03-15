@@ -1,0 +1,187 @@
+
+.descriptionBlock img {
+
+    position: relative;
+}
+.descriptionBlock h1 {
+    padding: 10px;
+    position: absolute;
+    margin-top: -12%;
+    color: lavender;
+}
+
+
+.editMode{display: inline-block;
+    cursor: pointer;
+    font-size:70%;
+    text-decoration:none;
+    padding:0px 5px;
+    color:#2b2b2b;
+    background:#ffffff;
+    margin-bottom: 3%;
+    margin-top: 3%;
+
+    border:0 ;
+}
+.editMode:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
+
+.status{display: inline-block;
+    cursor: pointer;
+    font-size:90%;
+    text-decoration:none;
+    padding:0px 5px;
+    color:#2b2b2b;
+
+
+    margin-bottom: 4%;
+    border:0 ;
+}
+.status:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
+
+.statusEdit {
+
+    size: 300px 300px;
+    font-size: 150%;
+}
+
+
+.profilename {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    margin: 10px;
+}
+
+
+
+
+
+.imageStyle {
+    width: 1100px;
+    height: 50px;
+}
+
+.profiledata {
+    display: grid;
+    grid-template-areas: "l r";
+    grid-template-columns: 4fr 7fr;
+    margin: 1%;
+
+}
+.profiledataleft {
+    color: #999999;
+
+    grid-area: l;
+}
+.profiledataright {
+text-decoration: none;
+    grid-area: r;
+
+}
+.profiledataright a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+.profiledataright div{
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+
+
+
+.contacts {
+    color: #999999;
+    padding-left: 10px;
+
+}
+
+
+.statuschange {
+    color: grey;
+    font-size: 80%;
+}
+.uploadButton{display: inline-block;
+    cursor: pointer;
+    font-size:80%;
+    text-decoration:none;
+    padding:0px 5px;
+    color:#2b2b2b;
+    background:#ffffff;
+    position: absolute;
+    border:0 ;
+}
+.uploadButton:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
+
+.profileWrapper {
+
+    font-size: 80%;
+    display: grid;
+
+    grid-template-areas:
+            "n c";
+
+    grid-template-columns: 1fr 1.2fr;
+
+    background-color: lavender;
+    grid-gap: 15px;
+
+
+}
+.descriptionBlock {
+    grid-area: c;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+
+
+}
+
+.first_block {
+    display: inline-block;
+    position: relative;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: white;
+    grid-area: n;
+    height: auto;
+    width: 100%;
+    padding: 1% 1% 0.1%;
+
+}
+
+.first_block img{
+    width: 100%;
+    height: auto;
+    min-width: 60px;
+    object-fit: cover;
+
+
+
+}
+
+
+.second_block {
+    display: none;
+
+}
+
+.first_block:hover .second_block {
+    position: absolute;
+    display: block;
+    top: 260px;
+    left: 27%;
+    width: 100%;
+    cursor: pointer;
+    font-size: 70%;
+    text-decoration:none;
+    color:white;
+    border-radius:31px;
+    margin: auto;
+
+
+}

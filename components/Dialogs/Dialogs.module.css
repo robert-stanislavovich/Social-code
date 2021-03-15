@@ -1,0 +1,49 @@
+.uploadButton {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    text-decoration: none;
+}
+
+.uploadButton:hover {
+    background-color: #555555;
+    color: white;
+}
+.pagin{display: inline-block;
+    cursor: pointer;
+    font-size:22px;
+    text-decoration:none;
+    padding:0px 5px;
+    color:#2b2b2b;
+    background:#ffffff;
+
+    border:0 ;
+}
+.pagin:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
+
+
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+    color: white;
+}
+
+.dialogsItems .active {
+    color: gold;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.messages .message {
+    color: white;
+}
+
+
+

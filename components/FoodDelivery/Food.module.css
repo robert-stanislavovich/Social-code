@@ -1,0 +1,243 @@
+.foodWindow {
+    display: grid;
+    grid-template-areas: "l r";
+    grid-template-columns: 1fr 0.4fr;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    grid-gap: 5px;
+    padding: 15px;
+}
+@media screen and (max-width: 600px) {
+    .foodWindow {
+        font-size: 10%;
+    }
+    button.all{
+        font-size: 20%;
+    }
+}
+.orderWindow {
+
+    grid-template-columns: 1fr 0.7fr;
+    background-color: white;
+    width: 1050px;
+    height: 2700px;
+    border-radius: 20px;
+    grid-gap: 5px;
+    padding: 15px;
+}
+
+.shadowBox{
+
+    width: 93vh;
+    height: 100vw;
+
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 1s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.1s; /* Задержка перед началом */
+}
+@keyframes show{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+
+.constructor{
+    width: 600px;
+    height: 1320px;
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px;
+
+}
+.constructorPizzaDescr{
+    font-size: 13px;
+float: right;
+}
+
+
+
+
+
+.foodList {
+    float: left;
+}
+.foodBasket {
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 15px;
+}
+.foodBasketList {
+    font-size: 70%;
+    margin-top: 30px;
+}
+
+
+.pizzaFrame {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    float: left;
+
+}
+.orderButton{
+    background-color: gainsboro;
+    border-radius: 20px;
+    border: none;
+    color: gray;
+    font-weight: bold;
+    padding: 4% 8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 80%;
+    margin-top: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.orderButton:hover {
+    background-color: orange; /* Green */
+    color: white;
+}
+.orderButtonActive {
+    background-color: orange;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.ingrButton {
+    background-color: gainsboro;
+    border-radius: 50%;
+    border: none;
+    color: gray;
+    text-align: center;
+    padding: 1px 1px;
+    font-size: 19px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-right: 14px;
+    margin-left: 14px;
+    width: 22px;
+    height: 22px;
+    display:inline-block;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+
+}
+.ingrButton:hover {
+    background-color: orange; /* Green */
+    color: white;
+}
+.board {
+    color: #4d4d4d;
+    cursor: pointer;
+
+}
+.board:hover {
+    /* Green */
+    color: orange;
+    font-weight: bold;
+}
+.boardActive{
+    color: orange;
+    font-weight: bold;
+}
+
+
+.constDescrTitle{
+    font-size: 19px;
+    color: #4d4d4d;
+    font-weight: bold;
+    margin: 15px;
+}
+
+
+.pizzaImage img{
+    width: 30%;
+    height: 30%;
+
+}
+.pizzaImageWindow {
+    width: auto;
+    height: auto;
+}
+.pizzaNameDescr{
+    width: 70%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pizzaName{
+    font-size: 90%;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 15px;
+}
+.pizzaDescription{
+    font-size: 70%;
+}
+.pizzaPrice{
+    font-weight: bold;
+    margin-top: 10%;
+}
+.ingredientsText{
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin: 5px;
+    text-align: center;
+}
+.ingredients{
+    width: 600px;
+    height: 150px;
+}
+.ingrName {
+    font-size: 13px;
+    color: grey;
+    margin-top: 5px;
+}
+
+.ingrPrice {
+    font-size: 14px;
+    font-weight: bold;
+}
+.constButtons {
+    margin-top: 300px;
+}
+.ingrCount {
+
+    font-weight: bold;
+}
