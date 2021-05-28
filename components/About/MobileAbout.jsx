@@ -4,11 +4,10 @@ import s from './About.module.css'
 import Paper from "@material-ui/core/Paper";
 
 
-
-const About = (props) => {
+const MobileAbout = (props) => {
     return <div>
         <Paper>
-            <div className={s.about}>
+            <div className={s.mobileAbout}>
 
                 <div>
                     <img className={s.img} src={img}/>
@@ -67,4 +66,4 @@ const About = (props) => {
     </div>
 
 }
-export default About
+export default MobileAbout

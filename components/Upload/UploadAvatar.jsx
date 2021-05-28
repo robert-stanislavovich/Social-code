@@ -6,6 +6,8 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {setPhoto, updatePhotoThunk} from "../../redux/profile-reducer";
+import Button from "@material-ui/core/Button";
+import {Input} from "@material-ui/core";
 
 
 
@@ -47,20 +49,22 @@ class UploadAvatar extends React.Component {
         if (imagePreviewUrl) {
             $imagePreview = (<img src={imagePreviewUrl} />);
         } else {
-            $imagePreview = (<div className={s.previewText}>Пожалуйста выберете фотографию, которую хотите загрузить</div>);
+            $imagePreview = (<div>Пожалуйста выберете фотографию, которую хотите загрузить</div>);
         }
 
         return (
             <div className={s.previewComponent}>
-                <form onSubmit={(e)=>this._handleSubmit(e)}>
-                    <input className={s.fileInput}
-                           type="file"
-                           onChange={(e)=>this._handleImageChange(e)} /> <div className={s.imgPreview}>
+                <div className={s.imgPreview}>
                     {$imagePreview}
                 </div>
-                    <div><button className={s.submitButton}
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                    <Input variant="outlined"
+                           type="file"
+                           onChange={(e)=>this._handleImageChange(e)} />
+
+                    <div><Button variant='contained'
                             type="submit"
-                            onClick={(e)=>this._handleSubmit(e)}>Загрузить фотографию</button></div>
+                            onClick={(e)=>this._handleSubmit(e)}>Загрузить фотографию</Button></div>
                 </form>
 
             </div>

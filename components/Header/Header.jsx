@@ -1,30 +1,72 @@
 import React from 'react';
 import s from './Header.module.css';
-import headerimg from '../../img/social-venture-network-logo.png'
 import {NavLink} from "react-router-dom";
-
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 
 const Header = (props) => {
-    return <header className={s.header}>
+
+    let burgerClick = () => {
+        if (props.burger) return props.openBurger(false)
+        if (!props.burger) return props.openBurger(true)
+    }
+
+
+    return <AppBar
+        color="inherit"
+        position="fixed"
+        className={s.appBar}>
+        <Toolbar>
 
 
 
-
-
-
-            <div className={s.loginblock}>{props.isAuth ? props.email :
-                <NavLink className={s.loginbutton}  to={'/login'}>Войти</NavLink>}
-                {props.isAuth ? <span > <button className={s.loginbutton} onClick={props.logout}>Выйти</button></span> : ""}
-            <span><NavLink to="/about" className={s.loginbutton}>О проекте</NavLink></span>
-
-
+            {props.isAuth
+            ? <div className={s.emailHead}>
+                {props.email}
             </div>
+            : <div className={s.loginblock}>
+                    <NavLink style={{textDecoration: 'none', color: 'black'}}
+                             to={'/login'}>
+                <Button>
+                    Войти
+                </Button>
+            </NavLink></div>}
+            {props.isAuth
+                ? <div className={s.loginblock}>
+                    <Button
+                        position="right"
+                        onClick={props.logout}>
+                        Выйти
+                    </Button>
+                </div>
+                : ""}
+            <div>
+                <Button>
+                    <NavLink
+                        style={{textDecoration: 'none', color: 'black'}}
+                        to="/about">
+                        О проекте
+                    </NavLink>
+                </Button>
+            </div>
+            <div className={s.burger}>
+                <IconButton
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    className={s.burger}>
+                    <MenuIcon onClick={() => burgerClick()}/>
+                </IconButton>
+            </div>
+        </Toolbar>
+    </AppBar>
 
-
-
-    </header>
 }
 
 export default Header;

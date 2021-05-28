@@ -5,47 +5,74 @@ import {NavLink} from "react-router-dom";
 import ProfileData from "./ProfileData";
 import ProfileDataEditMode from "./ProfileDataEditMode";
 import ProfileStatus from "./ProfileStatus";
+import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
 
 
 const ProfileInfo = (props) => {
 
     if (!props.profile) {
-        return <Preloader />
-    }
-    const ShowUploadPhoto = () => {
-        return (<NavLink className={s.second_block} to="/uploadAvatar">Обновить фотографию</NavLink>)
+        return <Preloader/>
     }
 
-    return (
-        <div className={s.profileWrapper}>
 
-            <div>
-                <div className={s.first_block}><img src={props.profile.photos.large}/>{props.paramsUserId ? "" :
-                    <ShowUploadPhoto/>}</div></div>
-            <div className={s.descriptionBlock}>
-
-                <div>
-                <div><span className={s.profilename}>{props.profile.fullName}</span> <span> (id: {props.profile.userId})</span></div>
-                    <div>
-                        <ProfileStatus status={props.status} updateStatusThunk={props.updateStatusThunk}/>
+    return (<div className={s.ProfileWrapper}>
+            <Grid container spacing={4}>
+                <Grid item xs={4}>
+                    <div className={s.first_block}>
+                        <div className={s.second_block}>
+                            <img src={props.profile.photos.large}/>
+                            {props.paramsUserId
+                                ? ""
+                                : <Button href="#/uploadAvatar"
+                                          variant="contained">
+                                    Обновить фотографию
+                                </Button>
+                            }
+                        </div>
                     </div>
-                <div>
-                    {props.paramsUserId ? "" :
-                    <a className={s.editMode} onClick={() => props.setEditMode(true)}>Изменить информацию</a>}
-                    {props.profileDataEditMode ? <a className={s.editMode} onClick={() =>
-                    {props.setEditMode(false)
-                    props.setSuccess("")}}>Выйти</a> : ""}
-                    {props.profileDataEditMode ? <ProfileDataEditMode profile={props.profile}
-                                                                      updateStatusThunk={props.updateStatusThunk}
-                                                                      status={props.status}/> :
-                        <ProfileData profile={props.profile}
-                                     updateStatusThunk={props.updateStatusThunk}
-                                     status={props.status}/>
+                </Grid>
+                <Grid item xs={8}>
+                    <div className={s.descriptionBlock}>
 
-                    }
-                </div>
-                </div>
-            </div>
+                        <div className={s.profilename}>
+                    <span>{props.profile.fullName}
+                    </span>
+                            <span> (id: {props.profile.userId})
+                    </span>
+                        </div>
+                        <div>
+                            <ProfileStatus status={props.status}
+                                           updateStatusThunk={props.updateStatusThunk}/>
+                        </div>
+                        <Divider/>
+                        <div>
+                            {!props.paramsUserId && !props.profileDataEditMode
+                                ? <a className={s.editMode} onClick={() => props.setEditMode(true)}>Редактировать</a>
+                                : ""}
+                            {props.profileDataEditMode
+                                ? <a className={s.editMode} onClick={() => {
+                                    props.setEditMode(false)
+                                    props.setSuccess("")
+                                }}>
+                                    Выйти
+                                </a>
+                                : ""}
+                            {props.profileDataEditMode
+                                ? <ProfileDataEditMode profile={props.profile}
+                                                       updateStatusThunk={props.updateStatusThunk}
+                                                       status={props.status}/>
+                                : <ProfileData profile={props.profile}
+                                               updateStatusThunk={props.updateStatusThunk}
+                                               status={props.status}/>
+
+                            }
+                        </div>
+
+                    </div>
+                </Grid>
+            </Grid>
         </div>
     )
 }

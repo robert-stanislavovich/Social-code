@@ -1,19 +1,19 @@
 import React from 'react';
-import s from './Login.module.css';
+import s from '.././Login.module.css';
 import {NavLink, Redirect} from "react-router-dom";
-import {loginThunk} from "../../redux/auth-reducer";
+import {loginThunk} from "../../../redux/auth-reducer";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
-import {maxLength10, maxLength50, required} from "../../validators/validators";
-import {Input} from "../../formcontrols/formControl";
+import {maxLength10, maxLength50, required} from "../../../validators/validators";
+import {Input} from "../../../formcontrols/formControl";
 import Button from "@material-ui/core/Button";
 
 
-const LoginForm = (props) => {
+const MobileLoginForm = (props) => {
 
 
     return <div>
-        <div className={s.loginpage}>
+        <div className={s.Mobileloginpage}>
             <div className={s.form}>
                 <div className={s.mainlogin}>
                     Вход
@@ -32,13 +32,15 @@ const LoginForm = (props) => {
                             name={"password"}
                             placeholder={"Пароль"}
                             type={"password"}
-                            validate={[required, maxLength10]}/>
-                    </span>
+                            validate={[required, maxLength10]}/></span>
 
                     <span className={s.rememberme}>
                         Запомнить меня
                         <div>
-                            <Field component={"input"} name={"rememberMe"} type={"checkbox"}/>
+                            <Field
+                                component={"input"}
+                                name={"rememberMe"}
+                                type={"checkbox"}/>
                         </div>
                     </span>
                     {props.captchaUrl
@@ -49,7 +51,8 @@ const LoginForm = (props) => {
                                 name={"captcha"}
                                 validate={[required]}/>
                     </span>
-                        : ""}
+                        : ""
+                    }
 
 
                     <div>
@@ -66,9 +69,9 @@ const LoginForm = (props) => {
 }
 
 
-const ReduxLogin = reduxForm({ form: "login" })(LoginForm)
+const ReduxLogin = reduxForm({ form: "login" })(MobileLoginForm)
 
-const Login = (props) => {
+const MobileLogin = (props) => {
     const onSubmit = (formData) => {
         props.loginThunk(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }
@@ -84,4 +87,4 @@ let mapStateToProps = (state) => ({
 })
 
 
-export default connect (mapStateToProps, {loginThunk})(Login);
+export default connect (mapStateToProps, {loginThunk})(MobileLogin);

@@ -1,6 +1,10 @@
-
+.ProfileWrapper{}
+@media (max-width: 500px) {
+    .ProfileWrapper {
+        display: none;
+    }
+}
 .descriptionBlock img {
-
     position: relative;
 }
 .descriptionBlock h1 {
@@ -13,7 +17,7 @@
 
 .editMode{display: inline-block;
     cursor: pointer;
-    font-size:70%;
+    font-size:90%;
     text-decoration:none;
     padding:0px 5px;
     color:#2b2b2b;
@@ -31,23 +35,25 @@
     text-decoration:none;
     padding:0px 5px;
     color:#2b2b2b;
-
-
     margin-bottom: 4%;
+    margin-top: 1%;
     border:0 ;
 }
-.status:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
+.status:hover{text-shadow: grey 0 0 15px;transition: all 0.2s ease;}
 
 .statusEdit {
 
     size: 300px 300px;
     font-size: 150%;
+    border: 0;
 }
 
 
 .profilename {
+    margin-top: 2%;
+    margin-left: 2%;
     font-size: 150%;
-    font-weight: bold;
+
 }
 
 .error {
@@ -76,6 +82,7 @@
 
     grid-area: l;
 }
+
 .profiledataright {
 text-decoration: none;
     grid-area: r;
@@ -83,11 +90,11 @@ text-decoration: none;
 }
 .profiledataright a{
     text-decoration: none;
-    color: dodgerblue;
+    color: black;
 }
 .profiledataright div{
     text-decoration: none;
-    color: dodgerblue;
+    color: black;
 }
 
 
@@ -104,30 +111,28 @@ text-decoration: none;
     color: grey;
     font-size: 80%;
 }
-.uploadButton{display: inline-block;
-    cursor: pointer;
-    font-size:80%;
-    text-decoration:none;
-    padding:0px 5px;
-    color:#2b2b2b;
-    background:#ffffff;
-    position: absolute;
-    border:0 ;
-}
-.uploadButton:hover{text-shadow: black 0 0 4px;transition: all 0.2s ease;}
 
 .profileWrapper {
 
-    font-size: 80%;
+
     display: grid;
 
     grid-template-areas:
             "n c";
 
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 2.1fr;
+    border-radius: 5px;
+    background-color: white;
 
-    background-color: lavender;
-    grid-gap: 15px;
+
+
+}
+.MdescriptionBlock {
+   font-size: 70%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+
 
 
 }
@@ -135,8 +140,37 @@ text-decoration: none;
     grid-area: c;
     padding: 10px;
     background-color: white;
-    border: 1px solid darkgrey;
     border-radius: 5px;
+
+
+
+}
+
+.Mfirst_block {
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    grid-area: n;
+    text-align: center;
+    padding-bottom: 5%;
+
+}
+.MButton{
+   margin-bottom: 5%;
+   margin-top: 3%;
+}
+.Mfirst_block img{
+    grid-area: c;
+
+    background-color: white;
+    border-radius: 5px;
+    height: 85%;
+    width: 85%;
+    margin-right: 8%;
+    margin-left: 8%;
+    margin-top: 8%;
+    margin-bottom: 3%;
 
 
 }
@@ -144,44 +178,39 @@ text-decoration: none;
 .first_block {
     display: inline-block;
     position: relative;
-    border: 1px solid darkgrey;
     border-radius: 5px;
     background-color: white;
     grid-area: n;
-    height: auto;
     width: 100%;
-    padding: 1% 1% 0.1%;
+    padding: 15px;
+
+
+
 
 }
+
+
 
 .first_block img{
     width: 100%;
     height: auto;
     min-width: 60px;
     object-fit: cover;
-
-
-
+    border-radius: 4px;
 }
+
 
 
 .second_block {
-    display: none;
+    height: 85%;
+    width: 85%;
+    margin: 8%;
 
 }
 
-.first_block:hover .second_block {
-    position: absolute;
-    display: block;
-    top: 260px;
-    left: 27%;
+
+.second_block a {
     width: 100%;
-    cursor: pointer;
-    font-size: 70%;
-    text-decoration:none;
-    color:white;
-    border-radius:31px;
-    margin: auto;
-
 
 }
+

@@ -15,7 +15,7 @@ let basket = props.basket.map(b => <div>- {b}</div>)
         Ваш заказ:
     </div>
 
-        <div>
+        <div className={s.pizzaDescription}>
             {props.basket.length>0 ? <div>{basket}</div> : ""}
         </div>
     <div className={s.foodBasket}>

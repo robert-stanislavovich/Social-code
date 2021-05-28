@@ -2,6 +2,8 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import {compose} from "redux";
 import {withRouter} from "react-router-dom";
+import Input from "@material-ui/core/Input";
+import TextField from "@material-ui/core/TextField";
 
 class ProfileStatus extends React.Component {
 
@@ -26,7 +28,7 @@ class ProfileStatus extends React.Component {
     }
     onStatusChange = (e) => {
         this.setState({
-            status: e.currentTarget.value
+            status: e.target.value
         })
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -37,8 +39,8 @@ class ProfileStatus extends React.Component {
 
     render() {
        return ( <div>
-           {!this.state.editMode && <span className={s.status} onClick={this.userId ? "" : this.activateEditMode}>{this.props.status || "...нет статуса..."}<br/></span>}
-           {this.state.editMode && <div ><textarea className={s.statusEdit} rows="1" cols="55" onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} value={this.state.status}/></div>}
+           {!this.state.editMode && <span className={s.status} onClick={this.userId ? "" : this.activateEditMode}>{this.props.status || "нет статуса"}<br/></span>}
+           {this.state.editMode && <div ><TextField variant="outlined" fullWidth={true} className={s.statusEdit}  onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMode} value={this.state.status}/></div>}
         <br/>
        </div>
        )}

@@ -42,7 +42,10 @@ class ProfileContainer extends React.Component {
                     paramsUserId={this.props.match.params.userId}
                     setEditMode={this.props.setEditMode}
                     profileDataEditModeъ={this.props.profileDataEditMode}
-                    setSuccess={this.props.setSuccess}/>
+                    setSuccess={this.props.setSuccess}
+                    editMode={this.props.editMode}
+
+            />
     </>
     }
 }
@@ -55,6 +58,7 @@ let mapStateToProps = (state) => ({
     authUserId: state.auth.userId,
     isAuth: state.auth.isAuth,
     profileDataEditMode: state.profilePage.profileDataEditMode
+
 
 })
 

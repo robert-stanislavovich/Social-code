@@ -1,34 +1,33 @@
-.header {
-    grid-area: h;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid darkgrey;
-    height: 110%;
-
-
-
-
-}
-
-.header img {
-    width: 7%;
-    margin-left: 12%;
-
-}
 
 .loginblock{
-    float: right;
+    margin-left: auto;
+    margin-right: 1%;
 
-   width: 100%;
-    height: 20%;
+}
+.burger {
+    margin-left: auto;
+    margin-right: 1%;
 
-    display: inline;
-    text-align: right;
+}
+@media (min-width: 500px) {
+    .burger {
+       display: none;
+        margin: 10%;
+    }
+}
 
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid darkgrey;
 
-    padding: 1% 1% 1%;
-    
+@media (max-width: 500px) {
+    .loginblock{
+        display: none;
+
+    }
+    .emailHead {
+        font-size: 70%;
+    }
+    .about{
+        display: none;
+    }
 }
 
 .fetching {

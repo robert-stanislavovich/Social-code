@@ -1,11 +1,13 @@
 import {authThunk} from "./auth-reducer";
 
 const SET_INIT = 'SET_INIT';
+const SET_BURGER = 'SET_BURGER';
 
 
 
 let initialState = {
-    init: false
+    init: false,
+    burger: false
 };
 
 const appReducer = (state = initialState, action) => {
@@ -16,6 +18,11 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                init: true
             }
+        case SET_BURGER:
+            return {
+                ...state,
+                burger: action.burger
+            }
         default:
             return state;
     }
@@ -23,6 +30,7 @@ const appReducer = (state = initialState, action) => {
 
 
 export const InitSucces = () =>  ({type: SET_INIT})
+export const openBurger = (burger) =>  ({type: SET_BURGER, burger})
 
 export const InitApp = () => (dispatch) =>  {
     let promise = dispatch(authThunk()) //чтобы это сработало, в authThunk должен быть return перед запросом

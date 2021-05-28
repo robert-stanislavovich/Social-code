@@ -32,7 +32,6 @@ const ProfileData = (props) => {
                 <div style={{margin: 3}}>{props.profile.lookingForAJobDescription}</div>
                 <div style={{margin: 3}}>{props.profile.aboutMe}</div>
                 <br style={{margin: 3}}></br>
-                <br/>
 
                 <div style={{margin: 3}}><a href={props.profile.contacts.vk}>{props.profile.contacts.vk}</a></div>
                 <div style={{margin: 3}}><a href={props.profile.contacts.instagram}>{props.profile.contacts.instagram}</a></div>
