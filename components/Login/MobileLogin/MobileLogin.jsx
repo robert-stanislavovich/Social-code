@@ -59,8 +59,8 @@ const MobileLoginForm = (props) => {
                         <button>Войти</button>
                     </div>
                     <p className={s.message}>
-                        Email: free@samuraijs.com
-                        Password: free
+                        Email: robert.stanislavovich@gmail.com
+                        Password: sasimovich
                     </p>
                 </form>
             </div>

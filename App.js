@@ -62,16 +62,19 @@ class App extends React.Component {
                                                               render={() => <MobileVersion />}/></div>}
                         {this.props.burger ? "" : <div className='MobileVersion'><Route path='/myusers'
                                                                                         render={() => <MobileUsersContainer />}/></div>}
-                        {this.props.burger ? "" : <div className='MobileVersion'><Route path='/login'
-                                                                                        render={() => <MobileLogin />}/></div>}
+                        <Grid item xs> {this.props.burger ? "" : <div className='MobileVersion'><Route path='/login'
+                                                                                        render={() => <MobileLogin />}/></div>}</Grid>
                         {this.props.burger ? "" : <div className='MobileVersion'><Route path='/about'
                                                                                         render={() => <MobileAbout />}/></div>}
+
 
 
                     </Grid>
 
                 <HeaderContainer/>
                     {this.props.burger ? <div className='MobileVersion'><MobileMenu /></div> : ""}
+                    {this.props.burger ? "" : <div className='MobileVersion'><Route path='/uploadAvatar'
+                                                                                    render={() => <UploadAvatar />}/></div>}
             </Container>
 
         )

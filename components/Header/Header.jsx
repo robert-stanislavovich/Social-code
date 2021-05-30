@@ -50,7 +50,8 @@ const Header = (props) => {
                 <Button>
                     <NavLink
                         style={{textDecoration: 'none', color: 'black'}}
-                        to="/about">
+                        to="/about"
+                        className={s.about}>
                         О проекте
                     </NavLink>
                 </Button>
